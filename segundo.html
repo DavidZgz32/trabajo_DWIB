@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bootstrap-datetimepicker-0.0.11/js/bootstrap-datetimepicker.min.js">
+
+
+    </script>
+    <script type="text/javascript" src="jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="jquery.validate.js"></script>
+    <link rel="stylesheet" src="bootstrap-datetimepicker-0.0.11/css/bootstrap-datetimepicker.min.css">
+    <meta charset="UTF-8">
+    <title>Vikingos</title>
+    <style>
+        body {
+            font: 400 15px/1.8 Lato, sans-serif;
+            color: #777;
+        }
+
+        .carousel-inner img {
+
+            width: 100%;
+            margin: auto;
+
+        }
+
+        .bg-1 {
+            background: #2d2d30;
+            color: #bdbdbd;
+        }
+
+        .bg-1 h3 {
+            color: #fff;
+        }
+
+        .bg-1 p {
+            font-style: italic;
+        }
+
+        .list-group-item:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        .navbar {
+            font-family: Montserrat, sans-serif;
+            margin-bottom: 0;
+            background-color: #2d2d30;
+            border: 0;
+            font-size: 11px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }
+
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #d5d5d5 !important;
+        }
+
+        .navbar-nav li a:hover {
+            color: #fff !important;
+        }
+
+        .navbar-nav li.active a {
+            color: #fff !important;
+            background-color: #29292c !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+
+        .container {
+            padding: 80px 120px;
+        }
+
+        .person {
+            border: 10px solid transparent;
+            margin-bottom: 25px;
+            width: 80%;
+            height: 80%;
+            opacity: 0.7;
+        }
+
+        .person:hover {
+            border-color: #f1f1f1;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function() {
+
+                    window.location.hash = hash;
+                });
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body id="miPagina" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <a class="navbar-brand" href="#">Vikingos</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <p id="horaActual"></p>
+                    </li>
+                    <li><a href="#miPagina">Inicio</a></li>
+                    <li><a href="#historia" id="historia2">Historia</a></li>
+                    <li><a href="#tierra">Tierras</a></li>
+                    <li><a href="#contact">Registro</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mas
+            <span class="caret"></span>
+          </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://ecoteuve.eleconomista.es/serie/Vikingos/critica">Foros</a></li>
+                            <li><a href="#">Pisajes</a></li>
+                            <li><a href="#">Comidas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="1660710.jpg-r_1280_720-f_jpg-q_x-xxyxx.jpg" alt="Los Angeles" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Travis Fimmel</h3>
+                    <p>Representa a Ragnar Lodbrok personaje principal</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="Alexander-Ludwig-en-Vikingos_reference.jpg" alt="Chicago" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Alexander Ludwig</h3>
+                    <p>Representa a Björn Ironside hijo de Ragnar</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="cla.jpg" alt="New york" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Gustaf Caspar Orm</h3>
+                    <p>Representa a Floki fiel amigo de Ragnar</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="kat.jpg" alt="New york" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Katheryn Winnick</h3>
+                    <p>Representa a Lagertha esplendida guerre y primera esposa de ragnar</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="rol.jpg" alt="New york" width="1200" height="700">
+                <div class="carousel-caption">
+                    <h3>Clive Standen</h3>
+                    <p>Representa a Rollo hermano de ragnar</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    </div>
+    <div id="historia" class="container text-center">
+        <h3>HISTORIA</h3>
+        <p><em>Por la horda!</em></p>
+        <p>Vikingo (del inglés viking, y este del nórdico antiguo víkingr) es el principal nombre dado a los miembros de los pueblos nórdicos originarios de Escandinavia, famosos por sus incursiones y pillajes en Europa. Dependiendo del contexto y de la interpretación del autor, puede usarse el nombre para referirse a los incursores de esta procedencia o a sus países de origen. La metonimia ha llevado a que el nombre se siga usando aún hoy en día de forma coloquial para referirse a los países escandinavos. Su lengua era el antiguo nórdico y se dividio en diferentes reinos.
+        </p>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Dinamarca</strong></p><br>
+                <a href="#demo" data-toggle="collapse">
+        <img src="danees.jpg" class="img-circle person" alt="Reyno Vikingo de Dinamarca" width="255" height="255">
+      </a>
+                <div id="demo" class="collapse">
+                    <p> Reinos vikingos de Dinamarca </p>
+                    <p>pequeños territorios gobernados</p>
+                    <p>por caudillos monarcas absolutos</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Noruega</strong></p><br>
+                <a href="#demo2" data-toggle="collapse">
+        <img src="Norway_in_Europe_(+Svalbard).svg.png" class="img-circle person" alt="Reyno Vikingo de Noruega" width="255" height="255">
+      </a>
+                <div id="demo2" class="collapse">
+                    <p>Reinos vikingos de Noruega</p>
+                    <p>Harald I unifica</p>
+                    <p>este reino en 872 d.c</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Suecia</strong></p><br>
+                <a href="#demo3" data-toggle="collapse">
+        <img src="220px-Distribution-sv.png" class="img-circle person" alt="Random Name" width="255" height="255">
+      </a>
+                <div id="demo3" class="collapse">
+                    <p>Reinos vikingos de Suecia</p>
+                    <p>Idioma similar al</p>
+                    <p>del reino de noruega</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tierra" class="bg-1">
+        <div class="container">
+            <h3 class="text-center">Las tierras conquistadas por los hijos de Odín</h3>
+            <p class="text-center">Basada en las leyendas del héroe nórdico Ragbar Lodbrok<br> repasamos algunas de las tierras conquistadas por estos guerreros y exploradores del mar<br><br></p>
+
+
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/paisajes_vikingos_813480742_1000x667.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>Los fiordos</strong></p>
+                        <p>Madre naturaleza fue creada por el cuerpo de un gigante muerto. </p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/paisajes_vikingos_81569942_1000x667.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>Borgund (Noruega)</strong></p>
+                        <p> Las numerosas iglesias de madera que se construyeron durante esa época </p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+                <!-- http://www.traveler.es/experiencias/galerias/paisajes-vikingos/651/image/30723-->
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/ales_stenar_suecia_9280_1000x667.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>Museo Vikingo de Oslo</strong></p>
+                        <p>Sus bellas cautivan a todos los visitantes.</p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/paisajes_vikingos_agujeros.jpg" alt="Paris" width="400" height="300">
+                        <p><strong>Islas Shetland</strong></p>
+                        <p>El dialecto de sus gentes, los nombres de los lugares e incluso la presencia de barcos vikingos en los puertos,</p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/paisajes_vikingos_490944409_1000x667.jpg" alt="New York" width="400" height="300">
+                        <p><strong>Auroras boreales</strong></p>
+                        <p>
+                            Durante la época estival, los vikingos salían al mar a conquistar y sabotear nuevas tierras.</p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="TIErras/paisajes_vikingos_bosque.jpg" alt="San Francisco" width="400" height="300">
+                        <p><strong>Bosques escandinavos</strong></p>
+                        <p>La madera para construir sus drakkar, grandes embarcaciones convertidas</p>
+                        <button class="btn" data-toggle="modal" data-target="#myModal">Visitar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="container">
+        <h3 class="text-center">Registrate</h3>
+        <p class="text-center"><em>Para mas contenido vikingo</em></p>
+
+        <form id="formulario" class="form-horizontal" novalidate action="#" method="post">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-7 form-group">
+                        <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
+
+                    </div>
+                    <div class="col-xs-6 col-sm-7 form-group">
+                        <input class="col-xs-6 col-sm-7 form-control" id="apellido" name="apellido" placeholder="Apellidos" type="text" required>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-7 form-group">
+                        <input class="form-control" id="telefono" name="telefono" placeholder="Telefono" type="correo">
+                    </div>
+                    <div class="col-xs-6 col-sm-7 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Correo" type="email">
+                    </div>
+                    <div class="col-xs-6 col-sm-7 form-group">
+                        <input class="form-control" id="direccion" name="direccion" placeholder="Direccion" type="direccion">
+                    </div>
+
+                </div>
+                <textarea class="form-control" id="comentario" name="comentario" placeholder="Comentarios" rows="5"></textarea>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 form-group">
+                        <input class="btn pull-right" type="submit" value="Enviar">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <script>
+            $("#formulario").validate({               
+                onkeyup: false,
+                onfocusout: false,
+                onclick: false,
+                               rules: {                   
+                    nombre: {                       
+                        required: true,
+                        minlength: 2                   
+                    },
+                    email: {                      
+                        required: true,
+                                                           
+                    },
+                    apellido: {                       
+                        required: true,
+                        minlength: 5                  
+                    }
+					},
+                                   messages: {                   
+                        nombre: {                       
+                            required: "Nombre es obligatorio",
+                            minlength: function(p, element) {                           
+                                return "Nombre tiene que ser igual o mayor que " + p;                       
+                            }                   
+                        },
+                                           
+                        email: "Introduzca un email correcto",
+
+
+                        apellido: {                       
+                            required: "Apellido es obligatorio",
+                                                   minlength: function(p, element) {                           
+                                return "Nombre tiene que ser igual o mayor que " + p;                       
+                            }                   
+                        }
+						},
+                        errorLabelContainer: "#errores",
+                        wrapper: "li"
+           
+            });
+
+        </script>
+    </div>
+     <br>
+  <h3 class="text-center">Sobre el proyecto</h3>  
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Mike</a></li>
+    <li><a data-toggle="tab" href="#menu1">Chandler</a></li>
+    <li><a data-toggle="tab" href="#menu2">Peter</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>Mike Ross, Manager</h2>
+      <p>Man, we've been on the road for some time now. Looking forward to lorem ipsum.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>Chandler Bing, Guitarist</h2>
+      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>Peter Griffin, Bass player</h2>
+      <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
